@@ -1,0 +1,27 @@
+{
+  "version": "1.0",
+  "siteId": "795hj2cw",
+  "name": "Test",
+  "description": "new test site",
+  "template": "top-menu",
+  "colorScheme": "coral",
+  "font": "Manrope",
+  "tags": [
+    "web development testing",
+    "staging environment",
+    "QA testing",
+    "website sandbox"
+  ],
+  "tools": [
+    {
+      "name": "Website Performance Analyzer",
+      "description": "Analyze page load times, Lighthouse scores, and other performance metrics for any given URL."
+    },
+    {
+      "name": "Website Accessibility Checker",
+      "description": "Scan a webpage for common accessibility issues (WCAG compliance) to ensure an inclusive user experience."
+    }
+  ],
+  "createdAt": 1767114444236,
+  "updatedAt": 1767114444236
+}

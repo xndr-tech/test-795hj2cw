@@ -1,0 +1,928 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test - Your Gateway to Flawless Web Experiences</title>
+  <meta name="description" content="Test provides robust tools and a sandbox environment for comprehensive web development testing, QA, and staging, ensuring your applications are always production-ready.">
+  <meta name="keywords" content="web development testing, staging environment, QA testing, website sandbox">
+  <meta name="robots" content="index, follow">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Test">
+  <meta property="og:description" content="Test provides robust tools and a sandbox environment for comprehensive web development testing, QA, and staging, ensuring your applications are always production-ready.">
+  <meta property="og:image" content="https://example.com/social-share-image.jpg">
+  <meta property="og:url" content="https://example.com">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Test">
+  <meta name="twitter:description" content="Test provides robust tools and a sandbox environment for comprehensive web development testing, QA, and staging, ensuring your applications are always production-ready.">
+  <meta name="twitter:image" content="https://example.com/twitter-share-image.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧪</text></svg>">
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Organization","name":"Test","url":"https://example.com","logo":"https://example.com/logo.png","description":"Test provides robust tools and a sandbox environment for comprehensive web development testing, QA, and staging, ensuring your applications are always production-ready."}
+  </script>
+
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700&display=swap');
+
+    :root {
+      --primary: #e07a5f;
+      --primary-dark: #c96248;
+      --secondary: #fdf4f2;
+      --text: #1f2937;
+      --text-muted: #6b7280;
+      --white: #ffffff;
+      --border: #e5e7eb;
+      --light-bg: #f9fafb;
+    }
+
+    /* Base Reset */
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Manrope', sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background-color: var(--white);
+    }
+
+    a {
+      color: var(--primary);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    /* Utility Classes */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .btn {
+      display: inline-block;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.375rem;
+      font-weight: 600;
+      text-align: center;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+      border: none;
+    }
+
+    .btn-primary {
+      background-color: var(--primary);
+      color: var(--white);
+    }
+
+    .btn-primary:hover {
+      background-color: var(--primary-dark);
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
+    .btn-secondary {
+      background-color: var(--secondary);
+      color: var(--primary);
+      border: 1px solid var(--primary);
+    }
+
+    .btn-secondary:hover {
+      background-color: var(--primary);
+      color: var(--white);
+      transform: translateY(-2px);
+      text-decoration: none;
+    }
+
+    .text-center {
+      text-align: center;
+    }
+
+    .section-spacing {
+      padding: 4rem 0;
+    }
+
+    @media (min-width: 768px) {
+      .section-spacing {
+        padding: 6rem 0;
+      }
+    }
+
+    /* Typography */
+    h1, h2, h3, h4 {
+      font-weight: 700;
+      line-height: 1.2;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
+    h1 { font-size: 2.5rem; }
+    h2 { font-size: 2rem; }
+    h3 { font-size: 1.5rem; }
+    p { margin-bottom: 1rem; }
+
+    @media (min-width: 768px) {
+      h1 { font-size: 3.5rem; }
+      h2 { font-size: 2.5rem; }
+    }
+
+    /* Header */
+    header {
+      background-color: var(--white);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+    }
+
+    header .container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .logo {
+      font-size: 1.75rem;
+      font-weight: 700;
+      color: var(--primary);
+      display: flex;
+      align-items: center;
+    }
+
+    .logo span {
+      margin-right: 0.5rem;
+      font-size: 2rem;
+    }
+
+    .nav-toggle {
+      display: block;
+      background: none;
+      border: none;
+      font-size: 2rem;
+      cursor: pointer;
+      color: var(--text);
+    }
+
+    .nav-toggle:hover {
+      color: var(--primary);
+    }
+
+    nav ul {
+      list-style: none;
+      display: none; /* Hidden by default for mobile */
+      flex-direction: column;
+      width: 100%;
+      position: absolute;
+      top: 100%;
+      left: 0;
+      background-color: var(--white);
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      padding: 1rem 0;
+      border-top: 1px solid var(--border);
+    }
+
+    nav ul.active {
+      display: flex; /* Show when active */
+    }
+
+    nav ul li {
+      margin: 0.5rem 0;
+      text-align: center;
+    }
+
+    nav ul li a {
+      color: var(--text);
+      font-weight: 500;
+      padding: 0.5rem 1rem;
+      display: block;
+      transition: color 0.3s ease;
+      text-decoration: none;
+    }
+
+    nav ul li a:hover {
+      color: var(--primary);
+      background-color: var(--secondary);
+      border-radius: 0.25rem;
+    }
+
+    @media (min-width: 768px) {
+      .nav-toggle {
+        display: none;
+      }
+
+      nav ul {
+        display: flex;
+        flex-direction: row;
+        position: static;
+        width: auto;
+        box-shadow: none;
+        padding: 0;
+        border-top: none;
+      }
+
+      nav ul li {
+        margin: 0 1rem;
+      }
+    }
+
+    /* Hero Section */
+    #hero {
+      background-color: var(--secondary);
+      padding: 6rem 0;
+      text-align: center;
+      display: flex;
+      align-items: center;
+      min-height: 80vh;
+    }
+
+    #hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1.5rem;
+      color: var(--primary-dark);
+    }
+
+    #hero p {
+      font-size: 1.25rem;
+      color: var(--text-muted);
+      max-width: 800px;
+      margin: 0 auto 2rem auto;
+    }
+
+    @media (min-width: 768px) {
+      #hero {
+        padding: 8rem 0;
+      }
+      #hero h1 {
+        font-size: 4.5rem;
+      }
+      #hero p {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* Features, Services Sections */
+    #features, #services {
+      background-color: var(--light-bg);
+    }
+
+    #features .grid, #services .grid {
+      display: grid;
+      gap: 2rem;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 640px) {
+      #features .grid, #services .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      #features .grid, #services .grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .card {
+      background-color: var(--white);
+      padding: 2rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    .card .icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      color: var(--primary);
+    }
+
+    .card h3 {
+      font-size: 1.75rem;
+      margin-bottom: 0.75rem;
+      color: var(--primary-dark);
+    }
+
+    .card p {
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 0;
+    }
+
+    /* About Section */
+    #about {
+      background-color: var(--white);
+    }
+
+    #about h2 {
+      margin-bottom: 2rem;
+      color: var(--primary-dark);
+    }
+
+    #about p {
+      max-width: 900px;
+      margin-left: auto;
+      margin-right: auto;
+      margin-bottom: 1.5rem;
+      line-height: 1.8;
+      font-size: 1.1rem;
+    }
+
+    /* Interactive Tools Sections */
+    #performance-analyzer, #accessibility-checker {
+      background-color: var(--secondary);
+      color: var(--text);
+    }
+
+    .tool-section h2 {
+      color: var(--primary-dark);
+      margin-bottom: 2rem;
+    }
+
+    .tool-form {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      max-width: 600px;
+      margin: 0 auto 2rem auto;
+    }
+
+    .tool-form input[type="url"] {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.375rem;
+      font-size: 1rem;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    .tool-form input[type="url"]:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(var(--primary-dark), 0.2);
+    }
+
+    .tool-form .btn-primary {
+      width: 100%;
+      padding: 0.9rem 1.5rem;
+    }
+
+    .tool-results {
+      background-color: var(--white);
+      padding: 2rem;
+      border-radius: 0.5rem;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .tool-results h3 {
+      color: var(--primary);
+      margin-bottom: 1rem;
+    }
+
+    .tool-results p {
+      margin-bottom: 0.75rem;
+      color: var(--text-muted);
+    }
+
+    .tool-results .result-item {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5rem 0;
+      border-bottom: 1px dashed var(--border);
+    }
+
+    .tool-results .result-item:last-child {
+      border-bottom: none;
+    }
+
+    .tool-results .result-label {
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .tool-results .result-value {
+      color: var(--primary-dark);
+      font-weight: 500;
+    }
+
+    .tool-results .loading-spinner {
+      border: 4px solid var(--border);
+      border-top: 4px solid var(--primary);
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 2rem auto 0 auto;
+      display: none;
+    }
+    
+    .tool-results .error-message {
+      color: var(--primary-dark);
+      font-weight: 600;
+      margin-top: 1rem;
+      display: none;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    /* Contact Section */
+    #contact {
+      background-color: var(--white);
+    }
+
+    #contact h2 {
+      color: var(--primary-dark);
+      margin-bottom: 2rem;
+    }
+
+    .contact-form {
+      max-width: 700px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .form-group {
+      margin-bottom: 1rem;
+    }
+
+    .form-group label {
+      display: block;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+      color: var(--text);
+    }
+
+    .form-group input,
+    .form-group textarea {
+      width: 100%;
+      padding: 0.8rem 1rem;
+      border: 1px solid var(--border);
+      border-radius: 0.375rem;
+      font-size: 1rem;
+      font-family: 'Manrope', sans-serif;
+      outline: none;
+      transition: border-color 0.3s ease;
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(var(--primary-dark), 0.2);
+    }
+
+    .form-group textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    .form-message {
+      margin-top: 1rem;
+      padding: 0.75rem 1rem;
+      border-radius: 0.375rem;
+      display: none; /* Hidden by default */
+      font-weight: 500;
+    }
+
+    .form-message.success {
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+    }
+
+    .form-message.error {
+      background-color: #f8d7da;
+      color: #721c24;
+      border: 1px solid #f5c6cb;
+    }
+
+
+    /* Footer */
+    footer {
+      background-color: var(--text);
+      color: var(--white);
+      padding: 3rem 0;
+      text-align: center;
+      font-size: 0.9rem;
+    }
+
+    footer .container {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    footer p {
+      margin-bottom: 0;
+      color: var(--text-muted);
+    }
+
+    footer .footer-nav ul,
+    footer .social-links ul {
+      list-style: none;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1rem;
+    }
+
+    footer .footer-nav a,
+    footer .social-links a {
+      color: var(--secondary);
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s ease;
+    }
+
+    footer .footer-nav a:hover,
+    footer .social-links a:hover {
+      color: var(--primary);
+    }
+
+    @media (min-width: 768px) {
+      footer .container {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+      }
+      footer .footer-nav ul,
+      footer .social-links ul {
+        flex-wrap: nowrap;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <a href="#hero" class="logo"><span>🧪</span> Test</a>
+      <button class="nav-toggle" aria-label="Toggle navigation">☰</button>
+      <nav>
+        <ul id="main-nav">
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#performance-analyzer">Performance</a></li>
+          <li><a href="#accessibility-checker">Accessibility</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="hero" class="section-spacing">
+      <div class="container">
+        <h1>Revolutionize Your Web Development Workflow</h1>
+        <p>Streamline testing, ensure quality, and deploy with confidence. Test provides an all-in-one sandbox and analytical suite for modern web applications.</p>
+        <a href="#features" class="btn btn-primary">Start Testing Now</a>
+      </div>
+    </section>
+
+    <section id="features" class="section-spacing text-center">
+      <div class="container">
+        <h2>Unleash the Power of Precision Testing</h2>
+        <p class="text-muted">Discover the core functionalities that make Test an indispensable part of your development toolkit.</p>
+        <div class="grid">
+          <div class="card">
+            <span class="icon">🚀</span>
+            <h3>Isolated Staging</h3>
+            <p>Deploy your application to a secure, isolated environment for rigorous pre-production validation without affecting live systems.</p>
+          </div>
+          <div class="card">
+            <span class="icon">📊</span>
+            <h3>Performance Metrics</h3>
+            <p>Gain deep insights into your website's speed, responsiveness, and efficiency with comprehensive performance analysis tools.</p>
+          </div>
+          <div class="card">
+            <span class="icon">🔍</span>
+            <h3>Accessibility Audits</h3>
+            <p>Ensure an inclusive user experience by identifying and rectifying common accessibility issues to meet WCAG standards.</p>
+          </div>
+          <div class="card">
+            <span class="icon">🧩</span>
+            <h3>Integration Testing</h3>
+            <p>Verify seamless interaction between different modules and external services, ensuring robust application functionality.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about" class="section-spacing text-center">
+      <div class="container">
+        <h2>About Test: Building a Flawless Web</h2>
+        <p>At Test, we believe that the foundation of exceptional web applications lies in meticulous testing and quality assurance. Our platform was born from the collective frustration with fragmented testing tools and the need for a unified, developer-friendly solution.</p>
+        <p>Our mission is to empower developers and QA teams to deliver high-quality, performant, and accessible web experiences with unprecedented efficiency. We are committed to continuous innovation, ensuring our tools evolve with the dynamic landscape of web development.</p>
+        <p>Join a growing community of innovators who trust Test to refine their projects, catch critical issues early, and accelerate their path to production. With Test, confidence in your code is just a click away.</p>
+      </div>
+    </section>
+
+    <section id="services" class="section-spacing text-center">
+      <div class="container">
+        <h2>Our Comprehensive Testing Solutions</h2>
+        <p class="text-muted">Test offers a range of services designed to cover every aspect of your application's quality.</p>
+        <div class="grid">
+          <div class="card">
+            <span class="icon">🤖</span>
+            <h3>Automated QA</h3>
+            <p>Implement scalable automated test suites for continuous integration, reducing manual effort and speeding up feedback loops.</p>
+          </div>
+          <div class="card">
+            <span class="icon">🧑‍💻</span>
+            <h3>Manual Validation</h3>
+            <p>Leverage expert human testers for exploratory testing and nuanced validation, catching issues automation might miss.</p>
+          </div>
+          <div class="card">
+            <span class="icon">🔒</span>
+            <h3>Security Scans</h3>
+            <p>Proactively identify and address potential security vulnerabilities and threats before they impact your users or data.</p>
+          </div>
+          <div class="card">
+            <span class="icon">🌐</span>
+            <h3>Cross-Browser Testing</h3>
+            <p>Ensure your website functions flawlessly across all major browsers and devices, guaranteeing consistent user experience.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="performance-analyzer" class="section-spacing tool-section text-center">
+      <div class="container">
+        <h2>Website Performance Analyzer</h2>
+        <p class="text-muted">Analyze page load times, Lighthouse scores, and other critical performance metrics for any given URL.</p>
+        <form id="performance-form" class="tool-form">
+          <input type="url" id="performance-url" placeholder="Enter URL (e.g., https://example.com)" required>
+          <button type="submit" class="btn btn-primary">Analyze Performance</button>
+        </form>
+        <div id="performance-results" class="tool-results">
+          <h3>Analysis Results</h3>
+          <p>Enter a URL and click 'Analyze Performance' to see results here.</p>
+          <div class="loading-spinner" id="performance-spinner"></div>
+          <p class="error-message" id="performance-error"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="accessibility-checker" class="section-spacing tool-section text-center">
+      <div class="container">
+        <h2>Website Accessibility Checker</h2>
+        <p class="text-muted">Scan a webpage for common accessibility issues (WCAG compliance) to ensure an inclusive user experience.</p>
+        <form id="accessibility-form" class="tool-form">
+          <input type="url" id="accessibility-url" placeholder="Enter URL (e.g., https://example.com)" required>
+          <button type="submit" class="btn btn-primary">Check Accessibility</button>
+        </form>
+        <div id="accessibility-results" class="tool-results">
+          <h3>Accessibility Report</h3>
+          <p>Enter a URL and click 'Check Accessibility' to see results here.</p>
+          <div class="loading-spinner" id="accessibility-spinner"></div>
+          <p class="error-message" id="accessibility-error"></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact" class="section-spacing text-center">
+      <div class="container">
+        <h2>Get in Touch with Test</h2>
+        <p class="text-muted">Have questions, feedback, or want to learn more about Test? We'd love to hear from you!</p>
+        <form id="contact-form" class="contact-form">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your Name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" required placeholder="Tell us how we can help..."></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary">Send Message</button>
+          <div id="contact-form-message" class="form-message"></div>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p>&copy; 2025 Test. All rights reserved.</p>
+      <div class="footer-nav">
+        <ul>
+          <li><a href="#hero">Home</a></li>
+          <li><a href="#features">Features</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="social-links">
+        <ul>
+          <li><a href="https://twitter.com/Test" target="_blank" aria-label="Twitter">Twitter</a></li>
+          <li><a href="https://linkedin.com/company/Test" target="_blank" aria-label="LinkedIn">LinkedIn</a></li>
+          <li><a href="https://github.com/Test" target="_blank" aria-label="GitHub">GitHub</a></li>
+        </ul>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // Smooth scroll for anchor links
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const targetId = this.getAttribute('href');
+          document.querySelector(targetId).scrollIntoView({
+            behavior: 'smooth'
+          });
+          // Close mobile nav if open
+          const mainNav = document.getElementById('main-nav');
+          if (mainNav.classList.contains('active')) {
+            mainNav.classList.remove('active');
+          }
+        });
+      });
+
+      // Mobile navigation toggle
+      const navToggle = document.querySelector('.nav-toggle');
+      const mainNav = document.getElementById('main-nav');
+      navToggle.addEventListener('click', () => {
+        mainNav.classList.toggle('active');
+      });
+
+      // Contact Form Submission Handler
+      const contactForm = document.getElementById('contact-form');
+      const contactFormMessage = document.getElementById('contact-form-message');
+
+      contactForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const name = document.getElementById('name').value.trim();
+        const email = document.getElementById('email').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        if (name === '' || email === '' || message === '') {
+          contactFormMessage.textContent = 'Please fill in all fields.';
+          contactFormMessage.className = 'form-message error';
+          contactFormMessage.style.display = 'block';
+          return;
+        }
+
+        // Basic email format validation
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (!emailRegex.test(email)) {
+          contactFormMessage.textContent = 'Please enter a valid email address.';
+          contactFormMessage.className = 'form-message error';
+          contactFormMessage.style.display = 'block';
+          return;
+        }
+
+        // Simulate form submission
+        contactFormMessage.textContent = 'Sending message...';
+        contactFormMessage.className = 'form-message';
+        contactFormMessage.style.display = 'block';
+
+        setTimeout(() => {
+          contactFormMessage.textContent = 'Thank you for your message! We will get back to you soon.';
+          contactFormMessage.className = 'form-message success';
+          contactFormMessage.style.display = 'block';
+          contactForm.reset(); // Clear the form
+        }, 1500);
+      });
+
+      // URL validation function
+      function isValidURL(url) {
+        try {
+          new URL(url);
+          return true;
+        } catch (e) {
+          return false;
+        }
+      }
+
+      // Website Performance Analyzer
+      const performanceForm = document.getElementById('performance-form');
+      const performanceUrlInput = document.getElementById('performance-url');
+      const performanceResults = document.getElementById('performance-results');
+      const performanceSpinner = document.getElementById('performance-spinner');
+      const performanceError = document.getElementById('performance-error');
+
+      performanceForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const url = performanceUrlInput.value.trim();
+
+        performanceResults.innerHTML = '<h3>Analysis Results</h3><p>Enter a URL and click \'Analyze Performance\' to see results here.</p>'; // Reset results
+        performanceError.style.display = 'none';
+        performanceSpinner.style.display = 'block';
+
+        if (!isValidURL(url)) {
+          performanceSpinner.style.display = 'none';
+          performanceError.textContent = 'Please enter a valid URL (e.g., https://example.com).';
+          performanceError.style.display = 'block';
+          return;
+        }
+
+        // Simulate API call for performance analysis
+        setTimeout(() => {
+          performanceSpinner.style.display = 'none';
+          const loadTime = (Math.random() * 5 + 1).toFixed(2); // 1 to 6 seconds
+          const lighthouseScore = (Math.random() * 30 + 70).toFixed(0); // 70 to 100
+          const ttfb = (Math.random() * 0.5 + 0.1).toFixed(2); // 0.1 to 0.6 seconds
+          const cls = (Math.random() * 0.1).toFixed(2); // 0 to 0.1
+
+          performanceResults.innerHTML = `
+            <h3>Analysis Results for ${url}</h3>
+            <div class="result-item"><span class="result-label">Load Time:</span><span class="result-value">${loadTime} s</span></div>
+            <div class="result-item"><span class="result-label">Lighthouse Score:</span><span class="result-value">${lighthouseScore}/100</span></div>
+            <div class="result-item"><span class="result-label">Time to First Byte (TTFB):</span><span class="result-value">${ttfb} s</span></div>
+            <div class="result-item"><span class="result-label">Cumulative Layout Shift (CLS):</span><span class="result-value">${cls}</span></div>
+            <p style="margin-top: 1rem;"><em>Note: This is a simulated analysis. For real-world results, use dedicated tools.</em></p>
+          `;
+        }, 2000); // Simulate 2-second analysis time
+      });
+
+      // Website Accessibility Checker
+      const accessibilityForm = document.getElementById('accessibility-form');
+      const accessibilityUrlInput = document.getElementById('accessibility-url');
+      const accessibilityResults = document.getElementById('accessibility-results');
+      const accessibilitySpinner = document.getElementById('accessibility-spinner');
+      const accessibilityError = document.getElementById('accessibility-error');
+
+      accessibilityForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const url = accessibilityUrlInput.value.trim();
+
+        accessibilityResults.innerHTML = '<h3>Accessibility Report</h3><p>Enter a URL and click \'Check Accessibility\' to see results here.</p>'; // Reset results
+        accessibilityError.style.display = 'none';
+        accessibilitySpinner.style.display = 'block';
+
+        if (!isValidURL(url)) {
+          accessibilitySpinner.style.display = 'none';
+          accessibilityError.textContent = 'Please enter a valid URL (e.g., https://example.com).';
+          accessibilityError.style.display = 'block';
+          return;
+        }
+
+        // Simulate API call for accessibility analysis
+        setTimeout(() => {
+          accessibilitySpinner.style.display = 'none';
+          const issuesFound = Math.floor(Math.random() * 10); // 0 to 9 issues
+          const severity = issuesFound > 5 ? 'High' : (issuesFound > 2 ? 'Medium' : 'Low');
+          const contrastRatio = (Math.random() * (4.5 - 3) + 3).toFixed(2); // Simulated contrast
+          const altTextMissing = Math.floor(Math.random() * 3);
+          const headingStructure = Math.random() > 0.5 ? 'Good' : 'Needs Review';
+
+          accessibilityResults.innerHTML = `
+            <h3>Accessibility Report for ${url}</h3>
+            <div class="result-item"><span class="result-label">Issues Found:</span><span class="result-value">${issuesFound}</span></div>
+            <div class="result-item"><span class="result-label">Overall Severity:</span><span class="result-value">${severity}</span></div>
+            <div class="result-item"><span class="result-label">Average Contrast Ratio:</span><span class="result-value">${contrastRatio}:1</span></div>
+            <div class="result-item"><span class="result-label">Missing Alt Text:</span><span class="result-value">${altTextMissing} elements</span></div>
+            <div class="result-item"><span class="result-label">Heading Structure:</span><span class="result-value">${headingStructure}</span></div>
+            <p style="margin-top: 1rem;"><em>Note: This is a simulated report. For a full audit, use a professional accessibility tool.</em></p>
+          `;
+        }, 2500); // Simulate 2.5-second analysis time
+      });
+
+    });
+  </script>
+</body>
+</html>
